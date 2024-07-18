@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #121212;
+    margin: 0;
+    font-family: 'Source Code Pro', monospace;
+    color: #ffffff;
+    overflow: hidden;
+    height: 100vh;
+}
+
+header {
+    width: 100%;
+    text-align: left;
+    padding: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #9400D3);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+#welcome-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+#welcome-message {
+    font-size: 2rem;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    text-align: center;
+}
+
+.burn {
+    animation: burn 1.5s forwards;
+}
+
+@keyframes burn {
+    0% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-100%); }
+}
+
+.flame {
+    position: absolute;
+    background: orange;
+    width: 6px;
+    height: 30px;
+    animation: flame 0.5s linear infinite;
+    border-radius: 50%;
+}
+
+@keyframes flame {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.5) translateY(-40px); }
+}
+
+.hidden {
+    display: none;
+}
+
+#main-content {
+    display: none;
+    width: 100%;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#main-content::-webkit-scrollbar {
+    display: none;
+}
+
+section {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    margin: 20px;
+}
+
+section.visible {
+    opacity: 1;
+}
+
+#main-content h2, #main-content h3 {
+    text-align: center;
+}
+
+#main-content p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#proposal-link {
+    color: #00ffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#proposal-link:hover {
+    text-decoration: underline;
+}
